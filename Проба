@@ -1,0 +1,38 @@
+const
+alphabet : string[26] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var
+b : array [1..100] of byte;
+N,i,j,k,M,N1 : byte;
+Procedure SwapB(i,k:byte);
+var x : byte;
+begin
+x:=B[i]; B[i]:=B[k]; B[k]:=x;
+end;
+Procedure WriteB;
+var i,j : byte;
+begin
+j:=1;
+for i:=1 to N do
+if b[i]=0
+then Inc(j)
+else write(alphabet[j]);
+writeln;
+end;
+begin
+readln(N1,M); N:=N1-1+M;
+for i:=1 to n1-1 do b[i]:=0;
+for i:=n1 to n1+m-1 do b[i]:=1;
+WriteB;
+while (true) do
+begin
+i:=N;
+while (i>0) and (B[i]>=B[i+1]) do i:=i-1;
+if i=0 then exit;
+for j:=i+1 to N do
+if (B[j]>B[i]) then K:=j;
+SwapB(i,k);
+for j:=i+1 to (i+ ((N+1-i) div 2)) do
+SwapB(j,N+i+1-j);
+WriteB;
+end;
+end.
